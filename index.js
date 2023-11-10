@@ -6,6 +6,11 @@ const isValidMap = {
    hex: hexIsValid,
 };
 
+const addMap = {
+   bin: binaryAdd,
+   hex: hexAdd,
+};
+
 var type = prompt(`Addition type ('bin' for binary; 'hex' for hexadecimal):`);
 
 if (type !== 'bin' && type !== 'hex') {
@@ -23,7 +28,8 @@ else {
          alert('Invalid number entered!');
       }
       else {
-         // Everything's fine.
+         var add = addMap[type];
+         alert(add(a, b));
       }
    }
 }
